@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import Form from "../Form";
+import Form from "@/components/Form";
 
 export default function Contact() {
   const { t } = useTranslation();

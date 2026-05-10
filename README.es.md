@@ -2,6 +2,8 @@ Idiomas: 🇺🇸 [English](README.md) · 🇧🇷 [Português](README.pt-BR.md)
 
 ---
 
+[![CI - Tests](https://github.com/WillianDDaniel/WillianDDaniel.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/WillianDDaniel/WillianDDaniel.github.io/actions/workflows/ci.yml)
+
 # Portafolio Personal de Willian
 
 Un portafolio personal moderno, responsivo y multilingüe construido con React, Vite y TypeScript. Este repositorio contiene la aplicación frontend, diseñada para mostrar mis proyectos, formación académica y experiencia profesional.
