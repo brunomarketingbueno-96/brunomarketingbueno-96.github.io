@@ -67,7 +67,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/WillianDDaniel/WillianDDaniel.github.io.git
 
 # Navegue até o diretório do projeto
 cd your-repo-name
