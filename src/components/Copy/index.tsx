@@ -23,7 +23,10 @@ export default function Copy() {
       </p>
 
       <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-6 md:mt-8 w-full">
-        <button
+        {/* Botão de Download do Currículo Atualizado */}
+        <a
+          href="./Curriculum_Willian_Deiviti_Daniel.pdf"
+          download="Curriculum_Willian_Deiviti_Daniel.pdf"
           className="
             font-medium cursor-pointer bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 px-6 py-2.5
             rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors duration-300
@@ -39,7 +42,7 @@ export default function Copy() {
               d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12V4m0 8l-3-3m3 3l3-3"
             />
           </svg>
-        </button>
+        </a>
 
         <a
           className="
