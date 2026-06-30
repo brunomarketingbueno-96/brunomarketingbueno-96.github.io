@@ -32,7 +32,7 @@ describe('Copy Component', () => {
   it('should render buttons with correct labels and attributes', () => {
     render(<Copy />)
 
-    const cvButton = screen.getByRole('button', { name: /download cv/i })
+    const cvButton = screen.getByRole('link', { name: 'Download CV' })
     const projectsLink = screen.getByRole('link', { name: /view projects/i })
 
     expect(cvButton).toBeInTheDocument()

@@ -41,17 +41,10 @@ describe('Footer Component', () => {
     const { container } = render(<Footer />)
     const footer = container.querySelector('footer')
 
+    // The footer should have the following classes:
+    // flex flex-col md:flex-row items-center justify-between w-full min-h-14 py-4 px-6 md:px-16 gap-4 bg-zinc-950 border-t border-zinc-800 text-sm text-zinc-400 shadow-sm shadow-zinc-900 mt-auto
     expect(footer).toHaveClass(
-      'flex',
-      'items-center',
-      'justify-center',
-      'w-full',
-      'h-14',
-      'bg-zinc-950',
-      'border-t',
-      'text-sm',
-      'sticky',
-      'mt-auto'
+      'flex flex-col md:flex-row items-center justify-between w-full min-h-14 py-4 px-6 md:px-16 gap-4 bg-zinc-950 border-t border-zinc-800 text-sm text-zinc-400 shadow-sm shadow-zinc-900 mt-auto'
     )
   })
 })
