@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../LanguageSwitcher";
-import ThemeToggle from "../ToggleTheme";
 
 interface MenuProps {
   mobile?: boolean;
@@ -22,7 +21,7 @@ export default function Menu({ mobile = false, onClose }: MenuProps) {
 
   if (mobile) {
     return (
-      <ul className="flex flex-col items-center justify-center h-full pb-20 gap-8 text-gray-200 font-medium text-2xl">
+      <ul className="flex flex-col items-center justify-center h-full pb-20 gap-8 text-gray-800 font-medium text-2xl">
         <li>
           <a href="#hero" onClick={scrollToTop} className="hover:text-white transition-colors">
             {t("menu.home")}
@@ -35,14 +34,13 @@ export default function Menu({ mobile = false, onClose }: MenuProps) {
 
         <li className="flex items-center gap-6 pt-8 mt-4 border-t border-zinc-800 w-3/4 justify-center">
           <LanguageSwitcher mobile={mobile} />
-          <ThemeToggle />
         </li>
       </ul>
     );
   }
 
   return (
-    <ul className="flex items-center gap-6 text-gray-200 font-normal">
+    <ul className="flex items-center gap-6 text-gray-800 font-normal">
       <li>
         <a href="#hero" onClick={scrollToTop} className="hover:text-white transition-colors">
           {t("menu.home")}
@@ -53,7 +51,6 @@ export default function Menu({ mobile = false, onClose }: MenuProps) {
       <li><a href="#educations" className="hover:text-white transition-colors">{t("menu.educations")}</a></li>
       <li><a href="#contact" className="hover:text-white transition-colors">{t("menu.contact")}</a></li>
       <li><LanguageSwitcher /></li>
-      <li><ThemeToggle /></li>
     </ul>
   );
 }
