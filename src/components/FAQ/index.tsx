@@ -41,7 +41,7 @@ export default function FAQ() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section id="faq" className="py-24 bg-white px-6 md:px-20 border-t border-zinc-100">
+    <section id="FAQ" className="py-24 bg-white px-6 md:px-20 border-t border-zinc-100">
       <div>
 
         <SectionHeader

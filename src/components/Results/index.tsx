@@ -100,7 +100,7 @@ const caseStudies = [
 
 export default function Results() {
   return (
-    <section id="resultados" className="py-24 bg-white px-6 md:px-20 border-t border-zinc-100">
+    <section id="cases" className="py-24 bg-white px-6 md:px-20 border-t border-zinc-100">
       <div className="max-w-6xl mx-auto">
 
         <SectionHeader
@@ -115,7 +115,6 @@ export default function Results() {
               key={item.id}
               className="bg-zinc-50 border border-zinc-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
             >
-              {/* Subtle background decoration on hover */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full z-0 transform translate-x-8 -translate-y-8 group-hover:scale-125 transition-transform duration-500"></div>
 
               <div className="relative z-10">

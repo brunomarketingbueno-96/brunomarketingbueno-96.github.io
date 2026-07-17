@@ -53,7 +53,7 @@ export default function Methodology() {
   const [activePillar, setActivePillar] = useState(0);
 
   return (
-    <section id="metodologia" className="py-20 px-6 md:px-20 bg-zinc-50 border-t border-zinc-200">
+    <section id="methodology" className="py-20 px-6 md:px-20 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-6xl mx-auto">
 
         <SectionHeader
