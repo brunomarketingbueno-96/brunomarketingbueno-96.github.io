@@ -18,14 +18,14 @@ type Service = {
 // --- COMPONENTE DE CARREGAMENTO (SKELETON) ---
 function SkeletonService() {
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col overflow-hidden animate-pulse">
-      <div className="w-full pt-[56.25%] bg-gray-200"></div>
-      <div className="p-5 flex flex-col grow gap-3">
-        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-        <div className="space-y-1.5">
-          <div className="h-3 bg-gray-200 rounded w-full"></div>
-          <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-          <div className="h-3 bg-gray-200 rounded w-4/6"></div>
+    <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm flex flex-col overflow-hidden animate-pulse">
+      <div className="w-full pt-[56.25%] bg-zinc-200"></div>
+      <div className="p-6 flex flex-col grow gap-4">
+        <div className="h-5 bg-zinc-200 rounded-md w-3/4"></div>
+        <div className="space-y-2.5 mt-2">
+          <div className="h-4 bg-zinc-200 rounded-md w-full"></div>
+          <div className="h-4 bg-zinc-200 rounded-md w-5/6"></div>
+          <div className="h-4 bg-zinc-200 rounded-md w-4/6"></div>
         </div>
       </div>
     </div>
@@ -34,7 +34,6 @@ function SkeletonService() {
 
 // --- COMPONENTE DO CARD DE SERVIÇO ---
 function ServiceCard({ service }: { service: Service }) {
-  const [isExpanded, setIsExpanded] = useState(false);
   const { t, i18n } = useTranslation();
 
   const currentLang = i18n.language ? i18n.language.substring(0, 2) : "pt";
@@ -45,57 +44,48 @@ function ServiceCard({ service }: { service: Service }) {
 
   if (!content) return null;
 
-  // Verifica se o texto é longo o suficiente para precisar do botão "Ler mais"
-  // 140 caracteres é uma boa média para 3 linhas em fontes pequenas
-  const isLongText = content.description.length > 140;
-
   // Valida se há link ativo para exibição do botão
   const hasValidLink = service.link && service.link.trim() !== "";
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
+    <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
 
       {/* Imagem com proporção 16:9 preservada */}
-      <div className="relative w-full pt-[56.25%] bg-gray-50 overflow-hidden border-b border-gray-50">
+      <div className="relative w-full pt-[56.25%] bg-zinc-100 overflow-hidden">
         <img
           src={service.imageUrl}
           alt={content.title}
-          className="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 ease-in-out"
+          className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors duration-300" />
+        {/* Overlay sutil em tom de âmbar ao passar o mouse */}
+        <div className="absolute inset-0 bg-amber-900/0 group-hover:bg-amber-900/10 transition-colors duration-300 pointer-events-none" />
       </div>
 
       {/* Conteúdo interno do Card */}
-      <div className="p-5 flex flex-col grow">
-        <h3 className="text-base lg:text-[14px] font-bold mb-2 text-slate-900 leading-snug">
+      <div className="p-6 flex flex-col grow">
+        <h3 className="text-lg font-bold mb-3 text-zinc-800 leading-snug">
           {content.title}
         </h3>
 
         <div className="flex flex-col grow justify-between">
-          <p className={`text-slate-600 text-xs lg:text-[12px] leading-relaxed ${isExpanded ? '' : 'line-clamp-3'}`}>
+          <p className="text-zinc-600 text-sm leading-relaxed mb-6">
             {content.description}
           </p>
-
-          {isLongText && (
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="text-blue-600 font-semibold hover:text-blue-800 transition-colors text-xs lg:text-[11px] mt-2 self-start"
-            >
-              {isExpanded ? t("services.showLess", "Ver menos") : t("services.readMore", "Ler mais")}
-            </button>
-          )}
         </div>
 
         {/* Botão de Ação (Renderizado estritamente se houver link válido) */}
         {hasValidLink && (
-          <div className="mt-4 pt-2 border-t border-gray-50">
+          <div className="mt-auto pt-4 border-t border-zinc-100">
             <a
               href={service.link!}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white text-xs lg:text-[11px] font-semibold py-2 px-3 rounded-lg transition-colors shadow-sm"
+              className="inline-flex w-full items-center justify-center bg-zinc-800 hover:bg-zinc-900 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors duration-200 shadow-sm"
             >
               {t("services.accessLink", "Acessar Projeto")}
+              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
         )}
@@ -124,25 +114,27 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" className="py-20 px-6 md:px-16 w-full bg-slate-50 text-slate-900">
+    <section id="servicos" className="py-24 px-6 md:px-20 w-full bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto">
 
         {/* Cabeçalho da Seção */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <span className="text-blue-600 font-bold tracking-wider uppercase text-xs mb-1.5">
+        <div className="mb-16 text-center">
+          <h2 className="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">
             {t("services.subtitle", "O que fazemos")}
-          </span>
-          <h2 className="text-3xl lg:text-2xl font-extrabold tracking-tight text-slate-900 mb-3">
-            {t("services.title", "Nossos Serviços")}
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
+          <h3 className="text-3xl md:text-4xl font-extrabold text-zinc-800 leading-tight mb-4">
+            {t("services.title", "Soluções Estratégicas")}
+          </h3>
+          <p className="text-zinc-600 max-w-2xl mx-auto text-lg">
+            Da atração à conversão. Serviços integrados para garantir que cada etapa do seu negócio funcione como uma máquina de vendas.
+          </p>
         </div>
 
         {/* Grid perfeitamente alinhado com 4 colunas no Desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {isLoading ? (
             <>
-              {Array.from({ length: 8 }).map((_, i) => (
+              {Array.from({ length: 4 }).map((_, i) => (
                 <SkeletonService key={i} />
               ))}
             </>

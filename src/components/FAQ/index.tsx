@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import SectionHeader from '@/components/SectionHeader';
 
-// Copywriting estratégico: As perguntas antecipam as objeções de quem vai comprar um serviço de alto valor.
 const faqs = [
   {
     id: 1,
@@ -30,31 +30,26 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  // Estado para controlar qual pergunta está aberta (null = todas fechadas)
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const whatsappNumber = "5545991566359";
+  const whatsappMessage = encodeURIComponent("Olá Bruno, li as perguntas frequentes no site e ainda tenho algumas dúvidas. Podemos conversar?");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   return (
     <section id="faq" className="py-24 bg-white px-6 md:px-20 border-t border-zinc-100">
-      <div className="max-w-4xl mx-auto">
+      <div>
 
-        {/* Cabeçalho */}
-        <div className="text-center mb-16">
-          <h2 className="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">
-            Tire suas dúvidas
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-zinc-800 leading-tight mb-4">
-            Perguntas Frequentes
-          </h3>
-          <p className="text-zinc-600 text-lg">
-            Ainda tem dúvidas se essa é a escolha certa para o seu negócio?
-          </p>
-        </div>
+        <SectionHeader
+          subtitle="Tire suas dúvidas"
+          title="Perguntas Frequentes"
+          description="Ainda tem dúvidas se essa é a escolha certa para o seu negócio?"
+        />
 
-        {/* Lista de Acordeão (FAQ) */}
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -72,7 +67,6 @@ export default function FAQ() {
                     {faq.question}
                   </span>
 
-                  {/* Ícone de + e - animado */}
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-amber-600 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
                     <svg
                       className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -89,7 +83,6 @@ export default function FAQ() {
                   </div>
                 </button>
 
-                {/* Conteúdo Expansível com truque de CSS Grid para animação fluida de altura */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0'}`}
                 >
@@ -102,6 +95,25 @@ export default function FAQ() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1"
+          >
+            Ainda tenho dúvidas
+            <svg
+              className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
 
       </div>

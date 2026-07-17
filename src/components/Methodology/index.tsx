@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import SectionHeader from '@/components/SectionHeader';
+import CallToAction from '@/components/CallToAction';
 
-// Dados dos pilares extraídos da metodologia do Bruno
 const pillars = [
   {
     id: 0,
@@ -49,42 +50,26 @@ const pillars = [
 ];
 
 export default function Methodology() {
-  // Estado para controlar qual pilar está ativo na tela
   const [activePillar, setActivePillar] = useState(0);
 
-  // Link do WhatsApp com mensagem pré-configurada
-  const whatsappNumber = "5545991566359";
-  const whatsappMessage = encodeURIComponent("Olá Bruno, estava vendo o seu site e gostaria de aplicar o seu método de 4 pilares no meu negócio!");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
   return (
-    <section id="metodologia" className="py-24 bg-zinc-50 px-6 md:px-20 border-t border-zinc-200">
+    <section id="metodologia" className="py-20 px-6 md:px-20 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-6xl mx-auto">
 
-        {/* Cabeçalho da Seção */}
-        <div className="text-center mb-16">
-          <h2 className="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">
-            O Método
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-extrabold text-zinc-800 leading-tight mb-4">
-            Marketing não é achismo, <br className="hidden sm:block" /> é método.
-          </h3>
-          <p className="text-zinc-600 max-w-2xl mx-auto text-lg">
-            Os 4 pilares estratégicos por trás de negócios que escalam com previsibilidade, organização e lucro.
-          </p>
-        </div>
+        <SectionHeader
+          subtitle="O Método"
+          title="Marketing não é achismo, é método."
+          description="Os 4 pilares estratégicos por trás de negócios que escalam com previsibilidade, organização e lucro."
+        />
 
-        {/* Layout Interativo: Menu Lateral + Detalhes (Desktop) / Empilhado (Mobile) */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-
-          {/* Menu Lateral de Pilares */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
           <div className="w-full lg:w-5/12 flex flex-col gap-3">
             {pillars.map((pillar, index) => (
               <button
                 key={pillar.id}
                 onClick={() => setActivePillar(index)}
-                className={`text-left p-5 rounded-xl transition-all duration-300 border-2 ${activePillar === index
-                  ? "bg-white border-amber-600 shadow-md"
+                className={`text-left px-5 py-4 rounded-2xl transition-all duration-300 border-2 ${activePillar === index
+                  ? "bg-white border-amber-600 shadow-sm"
                   : "bg-transparent border-transparent hover:bg-white/60 hover:border-zinc-200"
                   }`}
               >
@@ -98,7 +83,6 @@ export default function Methodology() {
                     </p>
                   </div>
 
-                  {/* Seta indicativa no menu ativo (visível apenas no desktop) */}
                   <div className={`hidden lg:block transition-transform duration-300 ${activePillar === index ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}>
                     <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
@@ -109,10 +93,7 @@ export default function Methodology() {
             ))}
           </div>
 
-          {/* Card de Detalhe do Pilar Ativo */}
-          <div className="w-full lg:w-7/12 bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-zinc-100 min-h-[320px] flex flex-col justify-center relative overflow-hidden">
-
-            {/* Decoração de fundo muito sutil */}
+          <div className="w-full lg:w-7/12 bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-zinc-200 flex flex-col justify-center relative overflow-hidden">
             <div className="absolute -top-12 -right-12 text-zinc-50 opacity-50 transform scale-150 pointer-events-none">
               {pillars[activePillar].icon}
             </div>
@@ -128,27 +109,14 @@ export default function Methodology() {
                 {pillars[activePillar].content}
               </p>
             </div>
-
           </div>
         </div>
 
-        {/* Call to Action (CTA) */}
-        <div className="mt-20 text-center">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-          >
-            Quero aplicar esse método no meu negócio
-            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-          <p className="mt-4 text-sm text-zinc-500 font-medium">
-            Fale diretamente com Bruno pelo WhatsApp.
-          </p>
-        </div>
+        <CallToAction
+          buttonText="Quero aplicar esse método no meu negócio"
+          helperText="Fale diretamente com Bruno pelo WhatsApp."
+          whatsappMessage="Olá Bruno, estava vendo o seu site e gostaria de aplicar o seu método de 4 pilares no meu negócio!"
+        />
 
       </div>
     </section>
