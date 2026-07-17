@@ -1,11 +1,15 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-// import About from "@/components/About";
-// import Projects from "@/components/Projects";
 import Educations from "@/components/Educations";
-// import Contact from "@/components/Contact";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import LinkedinReviews from "./components/Reviews";
+import Methodology from "./components/Methodology";
+import Results from "./components/Results";
+import Journey from "./components/Journey";
+import FAQ from "./components/FAQ";
 
 export default function App() {
 
@@ -17,11 +21,16 @@ export default function App() {
     ">
       <Header />
       <Hero />
+      <Methodology />
+      <Results />
+      <Journey />
       <Services />
+      <Testimonials />
+      <LinkedinReviews />
       <Educations />
-      {/* <About />
-      <Projects />
-      <Contact /> */}
+
+      <Contact />
+      <FAQ />
       <Footer />
     </div>
   )
