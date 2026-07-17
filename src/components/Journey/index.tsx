@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function About() {
   const whatsappNumber = "5545991566359";

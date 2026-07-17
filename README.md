@@ -6,7 +6,7 @@ Languages: 🇺🇸 [English](README.md) · 🇧🇷 [Português](README.pt-BR.m
 
 # Willian's Personal Portfolio
 
-A modern, responsive, and multilingual personal portfolio built with React, Vite, and TypeScript. This repository contains the frontend application, designed to showcase my projects, educational background, and professional experience.
+A modern, responsive, and multilingual personal portfolio built with   Vite, and TypeScript. This repository contains the frontend application, designed to showcase my projects, educational background, and professional experience.
 
 ---
 

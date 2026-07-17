@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Dados dos pilares extraídos da metodologia do Bruno
 const pillars = [
@@ -84,8 +84,8 @@ export default function Methodology() {
                 key={pillar.id}
                 onClick={() => setActivePillar(index)}
                 className={`text-left p-5 rounded-xl transition-all duration-300 border-2 ${activePillar === index
-                    ? "bg-white border-amber-600 shadow-md"
-                    : "bg-transparent border-transparent hover:bg-white/60 hover:border-zinc-200"
+                  ? "bg-white border-amber-600 shadow-md"
+                  : "bg-transparent border-transparent hover:bg-white/60 hover:border-zinc-200"
                   }`}
               >
                 <div className="flex items-center justify-between">

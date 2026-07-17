@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Ordem exata mantida conforme solicitado
 const linkedinReviews = [
   {

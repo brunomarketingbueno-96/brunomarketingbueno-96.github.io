@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Copywriting estratégico: As perguntas antecipam as objeções de quem vai comprar um serviço de alto valor.
 const faqs = [

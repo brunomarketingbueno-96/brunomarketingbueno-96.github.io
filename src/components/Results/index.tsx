@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Componente para animar os números quando a seção aparece na tela
-const AnimatedCounter = ({ end, prefix = "", suffix = "", decimals = 0 }) => {
+const AnimatedCounter = ({ end, prefix = "", suffix = "", decimals = 0 }: { end: number, prefix?: string, suffix?: string, decimals?: number }) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -22,10 +22,10 @@ const AnimatedCounter = ({ end, prefix = "", suffix = "", decimals = 0 }) => {
   useEffect(() => {
     if (!isVisible) return;
 
-    let startTimestamp = null;
+    let startTimestamp = 0;
     const duration = 2000; // 2 segundos de animação
 
-    const step = (timestamp) => {
+    const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
 

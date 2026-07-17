@@ -6,7 +6,7 @@ Idiomas: 🇺🇸 [English](README.md) · 🇧🇷 [Português](README.pt-BR.md)
 
 # Portafolio Personal de Willian
 
-Un portafolio personal moderno, responsivo y multilingüe construido con React, Vite y TypeScript. Este repositorio contiene la aplicación frontend, diseñada para mostrar mis proyectos, formación académica y experiencia profesional.
+Un portafolio personal moderno, responsivo y multilingüe construido con   Vite y TypeScript. Este repositorio contiene la aplicación frontend, diseñada para mostrar mis proyectos, formación académica y experiencia profesional.
 
 ---
 
