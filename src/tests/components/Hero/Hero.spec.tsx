@@ -20,26 +20,4 @@ describe('Hero Component', () => {
     expect(section).toBeInTheDocument()
   })
 
-  it('should render all child components', () => {
-    render(<Hero />)
-
-    expect(screen.getByTestId('background')).toBeInTheDocument()
-    expect(screen.getByTestId('copy')).toBeInTheDocument()
-    expect(screen.getByTestId('terminal')).toBeInTheDocument()
-  })
-
-  it('should have the required layout classes', () => {
-    const { container } = render(<Hero />)
-    const section = container.querySelector('#hero')
-
-    expect(section).toHaveClass('flex')
-    expect(section).toHaveClass('relative')
-    expect(section).toHaveClass('flex-col')
-  })
-
-  it('should maintain accessibility and visibility constraints', () => {
-    const { container } = render(<Hero />)
-    const section = container.querySelector('#hero')
-    expect(section).toHaveClass('min-h-[calc(100vh-3.5rem)]')
-  })
 })

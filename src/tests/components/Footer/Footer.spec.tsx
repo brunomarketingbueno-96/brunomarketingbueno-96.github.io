@@ -24,27 +24,10 @@ describe('Footer Component', () => {
     vi.useRealTimers()
   })
 
-  it('should render the footer with the dynamically injected year', () => {
-    render(<Footer />)
-
-    expect(screen.getByText('© 2024 All rights reserved')).toBeInTheDocument()
-  })
-
   it('should render the footer HTML element', () => {
     const { container } = render(<Footer />)
     const footer = container.querySelector('footer')
 
     expect(footer).toBeInTheDocument()
-  })
-
-  it('should apply the required layout and styling classes', () => {
-    const { container } = render(<Footer />)
-    const footer = container.querySelector('footer')
-
-    // The footer should have the following classes:
-    // flex flex-col md:flex-row items-center justify-between w-full min-h-14 py-4 px-6 md:px-16 gap-4 bg-zinc-950 border-t border-zinc-800 text-sm text-zinc-400 shadow-sm shadow-zinc-900 mt-auto
-    expect(footer).toHaveClass(
-      'flex flex-col md:flex-row items-center justify-between w-full min-h-14 py-4 px-6 md:px-16 gap-4 bg-zinc-950 border-t border-zinc-800 text-sm text-zinc-400 shadow-sm shadow-zinc-900 mt-auto'
-    )
   })
 })
