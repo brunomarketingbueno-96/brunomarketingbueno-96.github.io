@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Logo from '../Logo'; // Importe o componente Logo que criamos anteriormente
 
 export default function Footer() {

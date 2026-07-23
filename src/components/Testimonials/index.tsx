@@ -1,29 +1,24 @@
-
-// Array com os dados dos depoimentos, contendo os IDs dos vídeos que você enviou
+// Array com os dados dos depoimentos, contendo os novos vídeos e nomes (usados apenas no title)
 const testimonials = [
   {
     id: 1,
-    name: "Nome do Cliente 1",
-    role: "Cargo / Empresa",
-    videoId: "CRuz5TiyL9s",
+    videoId: "SPsZ6tmrjYo",
+    name: "Victor e Raquel",
   },
   {
     id: 2,
-    name: "Nome do Cliente 2",
-    role: "Cargo / Empresa",
-    videoId: "_URG4LDzQ1k",
+    videoId: "YTAGG-KUqKE",
+    name: "Sarah",
   },
   {
     id: 3,
-    name: "Nome do Cliente 3",
-    role: "Cargo / Empresa",
-    videoId: "UNUmuNt-7po",
+    videoId: "_l8_pi3qO60",
+    name: "Samia",
   },
   {
     id: 4,
-    name: "Nome do Cliente 4",
-    role: "Cargo / Empresa",
-    videoId: "Ddt0A1tIZwo",
+    videoId: "6SQwbxMCagQ",
+    name: "Manoela",
   }
 ];
 
@@ -38,10 +33,10 @@ export default function Testimonials() {
             Depoimentos
           </h2>
           <h3 className="text-3xl md:text-4xl font-extrabold text-zinc-800">
-            O que dizem os parceiros
+            Relatos de clientes que falam mais alto que promessas.
           </h3>
           <p className="mt-4 text-zinc-600 max-w-2xl mx-auto">
-            Resultados reais e estratégias que transformam negócios. Confira a experiência de quem já confiou na minha gestão de marketing.
+            Resultados reais de quem vive o front de batalha do digital.
           </p>
         </div>
 
@@ -57,17 +52,11 @@ export default function Testimonials() {
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src={`https://www.youtube.com/embed/${testimonial.videoId}?rel=0&modestbranding=1`}
-                  title={`Depoimento de ${testimonial.name}`}
+                  title={`Depoimento - ${testimonial.name}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-              </div>
-
-              {/* Informações do Cliente */}
-              <div className="mt-5 mb-2 px-2">
-                <h4 className="text-lg font-bold text-zinc-800">{testimonial.name}</h4>
-                <p className="text-sm text-amber-600 font-medium">{testimonial.role}</p>
               </div>
             </div>
           ))}

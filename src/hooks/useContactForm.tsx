@@ -50,6 +50,7 @@ export function useContactForm() {
       }
     } catch (error) {
       setStatus("error");
+      console.error(error);
       setErrorKey("contact.form.messages.genericError");
     }
   };

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function CTA() {
   const whatsappNumber = "5545991566359";

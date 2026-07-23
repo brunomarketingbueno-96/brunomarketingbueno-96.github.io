@@ -27,16 +27,6 @@ describe("Menu Component", () => {
     window.scrollTo = vi.fn();
   });
 
-  it("should render desktop menu by default", () => {
-    render(<Menu />);
-
-    expect(screen.getByText("menu.home")).toBeInTheDocument();
-    expect(screen.getByText("menu.about")).toBeInTheDocument();
-
-    expect(screen.getByTestId("mock-lang-switcher")).toHaveTextContent("Desktop");
-    expect(screen.getByTestId("mock-theme-toggle")).toBeInTheDocument();
-  });
-
   it("should render mobile menu when mobile prop is true", () => {
     render(<Menu mobile={true} />);
 

@@ -70,7 +70,7 @@ export default function Terminal() {
 
     if (!("parts" in line) || !line.parts) {
       return (
-        <span className={(line as any).color}>
+        <span className={(line as typeof CODE_LINES[0]).color}>
           {line.text.slice(0, renderLimit)}
         </span>
       );
