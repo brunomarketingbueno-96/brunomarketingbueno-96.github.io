@@ -12,13 +12,11 @@ export default function Hero() {
           </h2>
 
           <h1 className="text-3xl md:text-4xl font-extrabold text-zinc-800 leading-tight mb-4">
-            Estratégia e integração para o crescimento do seu negócio
+            Estratégia, tecnologia e performance para escalar o seu negócio.
           </h1>
 
           <p className="text-zinc-600 text-base leading-relaxed mb-6">
-            Direto de Blumenau para o mundo. Sou apaixonado por ajudar empresas
-            a crescer de maneira estratégica e integrada, atuando com foco em
-            Marketing Enterprise, ABM, E-commerce e Consultoria Estratégica.
+            Trabalho com projetos focados em vendas de produtos físicos, serviços, infoprodutos, cursos e mentorias. Com minha equipe de direção de arte e tecnologia, entregamos soluções integradas. Os valores variam conforme cada projeto. Marcamos uma reunião para entender seu caso e propor a solução certa.
           </p>
         </div>
 
@@ -27,7 +25,7 @@ export default function Hero() {
             href="#servicos"
             className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-lg shadow-sm transition-colors duration-200"
           >
-            Solicitar serviços
+            Solicitar Diagnóstico Gratuito
           </a>
 
           <a
@@ -41,14 +39,14 @@ export default function Hero() {
 
       {/* Coluna da Imagem */}
       <div className="flex-shrink-0 flex justify-center items-center">
-        <div className="relative bg-amber-50/90 rounded-2xl overflow-hidden shadow-md">
+        <div className="relative rounded-sm overflow-hidden shadow-md">
           <img
-            src="bruno-bueno-profile.png"
+            src="bru.png"
             alt="Bruno Bueno"
-            className="w-72 sm:w-80 lg:w-92 -ml-1 h-auto object-cover saturate-75 contrast-90 brightness-105"
+            className="w-72 sm:w-80 lg:w-92 h-auto object-cover"
           />
 
-          <div className="absolute inset-0 bg-blue-600/20 mix-blend-soft-light pointer-events-none"></div>
+
         </div>
       </div>
     </section>

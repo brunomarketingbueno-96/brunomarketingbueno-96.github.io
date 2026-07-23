@@ -13,7 +13,7 @@ export default function About() {
 
             <div className="relative z-10 w-full max-w-md rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-zinc-200 aspect-[4/5]">
               <img
-                src="bruno-bueno-portifolio.png"
+                src="br.jpg"
                 alt="Bruno Bueno trabalhando"
                 className="w-full h-full object-cover saturate-[0.85] contrast-[1.05]"
               />
@@ -27,15 +27,18 @@ export default function About() {
               Muito prazer, Bruno Bueno
             </h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-zinc-800 leading-tight mb-6">
-              Estratégia guiada por <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-500">resultados</span> e propósito.
+              Meu maior diferencial: trabalho por <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-500">resultados</span>, não apenas por contrato.
             </h3>
 
             <div className="text-zinc-600 text-base md:text-md leading-relaxed space-y-4 mb-8">
               <p>
-                Natural de Caxias do Sul e residente em Blumenau, dediquei mais de uma década da minha vida para simplificar o complexo no marketing e nas vendas. Minha missão é integrar estratégia, operação e gestão com agilidade.
+                Você só deveria pagar por aquilo que traz resultado. Por isso, começo com projetos curtos e com contratos curtos. Não exijo contratos de 12 meses. Se não gerar resultado, você é livre para sair.
               </p>
               <p>
-                Minha jornada é baseada na filosofia japonesa do <strong>Ikigai</strong>: a busca constante por evolução profissional, emocional e espiritual. Para mim, o sucesso de um negócio vai além do faturamento; trata-se de retribuir para a sociedade e construir bases sólidas.
+                <strong>Retenção natural</strong>. Meus clientes ficam comigo porque os resultados falam por si.
+              </p>
+              <p>
+                E o melhor: a grande maioria dos meus projetos, pode ser atendida de forma online, onde você vai acompanhando toda a jornada de construção.
               </p>
             </div>
 
@@ -91,7 +94,7 @@ export default function About() {
 
             <div className="-mt-8 w-full lg:self-center lg:-ml-4">
               <CallToAction
-                buttonText="Agendar um bate-papo"
+                buttonText="Quero uma parceria focada em lucro"
                 whatsappMessage="Olá Bruno, conheci um pouco da sua história no site e gostaria de bater um papo sobre o meu negócio."
               />
             </div>

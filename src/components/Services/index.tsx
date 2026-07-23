@@ -34,7 +34,7 @@ function SkeletonService() {
 
 // --- COMPONENTE DO CARD DE SERVIÇO ---
 function ServiceCard({ service }: { service: Service }) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const currentLang = i18n.language ? i18n.language.substring(0, 2) : "pt";
 
@@ -44,8 +44,6 @@ function ServiceCard({ service }: { service: Service }) {
 
   if (!content) return null;
 
-  // Valida se há link ativo para exibição do botão
-  const hasValidLink = service.link && service.link.trim() !== "";
 
   return (
     <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
@@ -73,22 +71,7 @@ function ServiceCard({ service }: { service: Service }) {
           </p>
         </div>
 
-        {/* Botão de Ação (Renderizado estritamente se houver link válido) */}
-        {hasValidLink && (
-          <div className="mt-auto pt-4 border-t border-zinc-100">
-            <a
-              href={service.link!}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center bg-zinc-800 hover:bg-zinc-900 text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors duration-200 shadow-sm"
-            >
-              {t("services.accessLink", "Acessar Projeto")}
-              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-        )}
+
       </div>
     </div>
   );
@@ -131,7 +114,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Grid perfeitamente alinhado com 4 colunas no Desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
             <>
               {Array.from({ length: 4 }).map((_, i) => (
