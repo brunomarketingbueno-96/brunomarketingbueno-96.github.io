@@ -74,7 +74,7 @@ export default function Educations() {
 
   if (isLoading) {
     return (
-      <section className="flex flex-col items-center justify-center py-20 min-h-[500px] w-full bg-zinc-50">
+      <section className="flex flex-col items-center justify-center py-20 min-h-125 w-full bg-zinc-50">
         <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-zinc-800"></div>
       </section>
     );
@@ -87,11 +87,11 @@ export default function Educations() {
       <div className="max-w-6xl mx-auto">
 
         <SectionHeader
-          subtitle={t("educations.seoText", "Constante evolução e aprendizado contínuo")}
-          title={t("educations.title", "Formações & Especializações")}
+          subtitle={t('educations.subtitle', { defaultValue: 'Constant evolution and continuous learning' })}
+          title={t('educations.title', { defaultValue: 'Degrees & Specializations' })}
         />
 
-        <div className="relative w-full h-[500px] md:h-[450px] flex items-center justify-center perspective-1000">
+        <div className="relative w-full h-125 md:h-112.5 flex items-center justify-center perspective-1000">
 
           {total > 1 && (
             <button
@@ -115,7 +115,7 @@ export default function Educations() {
               <div
                 key={edu.id}
                 onClick={() => !isCenter && handleSelect(index)}
-                className={`absolute w-full max-w-[320px] md:max-w-md h-full max-h-[420px] bg-white rounded-2xl border border-zinc-200 flex flex-col overflow-hidden transition-all duration-700 ease-out ${getCardStyleAndClasses(index)}`}
+                className={`absolute w-full max-w-[320px] md:max-w-md h-full max-h-105 bg-white rounded-2xl border border-zinc-200 flex flex-col overflow-hidden transition-all duration-700 ease-out ${getCardStyleAndClasses(index)}`}
               >
                 <div className="relative w-full h-40 md:h-48 shrink-0 bg-zinc-100 border-b border-zinc-50 overflow-hidden">
                   <img
@@ -128,7 +128,7 @@ export default function Educations() {
                 <div className="p-6 flex flex-col grow">
                   <div className="flex justify-between items-start mb-2">
                     <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
-                      {edu.type === 'college' ? t("educations.type.college", "Faculdade") : t("educations.type.course", "Curso/Especialização")}
+                      {edu.type === 'college' ? t('educations.type_college', { defaultValue: 'College' }) : t('educations.type_course', { defaultValue: 'Course/Specialization' })}
                     </span>
                   </div>
 
@@ -151,7 +151,7 @@ export default function Educations() {
                         rel="noopener noreferrer"
                         className="text-amber-600 hover:text-amber-700 text-[11px] font-bold transition-colors flex items-center gap-1"
                       >
-                        {t("educations.viewCertificate", "Ver Certificado")}
+                        {t('educations.view_certificate', { defaultValue: 'View Certificate' })}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -178,8 +178,8 @@ export default function Educations() {
         </div>
 
         <CallToAction
-          buttonText={t("educations.ctaButton", "Falar sobre o meu projeto")}
-          whatsappMessage="Olá Bruno, vi suas formações no site e gostaria de conversar sobre o meu negócio."
+          buttonText={t('educations.cta_button_text', { defaultValue: 'Talk about my project' })}
+          whatsappMessage={t('educations.cta_whatsapp_message', { defaultValue: 'Hello Bruno, I saw your qualifications on the website and would like to talk about my business.' })}
         />
 
       </div>

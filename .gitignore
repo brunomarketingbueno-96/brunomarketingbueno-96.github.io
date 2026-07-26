@@ -26,3 +26,4 @@ node_modules
 .env.production
 coverage
 dados-do-bruno.md
+generate-tests.js

@@ -29,7 +29,6 @@ export default function LanguageSwitcher({ mobile = false }: LanguageSwitcherPro
   }, []);
 
   const getDisplayLanguage = () => {
-    if (currentLanguage.includes("en")) return "EN";
     if (currentLanguage.includes("es")) return "ES";
     return "PT";
   };
@@ -68,8 +67,8 @@ export default function LanguageSwitcher({ mobile = false }: LanguageSwitcherPro
           z-50 py-1.5 overflow-hidden animate-in fade-in slide-in-from-top-2
           ${mobile ? "left-1/2 -translate-x-1/2 origin-top" : "right-0 origin-top-right"}
         `}>
-          {["pt-BR", "en-US", "es-ES"].map((lang) => {
-            const labels: Record<string, string> = { "pt-BR": "Português", "en-US": "English", "es-ES": "Español" };
+          {["pt-BR", "es-ES"].map((lang) => {
+            const labels: Record<string, string> = { "pt-BR": "Português", "es-ES": "Español" };
             const isActive = currentLanguage.includes(lang.split('-')[0]);
 
             return (

@@ -26,13 +26,13 @@ export default function Logo({ isWhite = false, hideIcon = false }: LogoProps) {
       )}
 
       <div className="flex items-baseline">
-        <span className={isWhite ? "text-white" : "bg-gradient-to-r from-amber-900 to-amber-500 bg-clip-text text-transparent drop-shadow-sm"}>
+        <span className={isWhite ? "text-white" : "bg-linear-to-r from-amber-900 to-amber-500 bg-clip-text text-transparent drop-shadow-sm"}>
           BRUNO
         </span>
-        <span className={isWhite ? "text-white ml-1.5" : "text-zinc-800"}>
+        <span className={isWhite ? "text-white" : "text-zinc-800"}>
           BUENO
         </span>
-        <span className={isWhite ? "text-white ml-[2px]" : "text-amber-600 ml-[2px]"}>.</span>
+        <span className={isWhite ? "text-white" : "text-amber-600"}>.</span>
       </div>
     </div>
   )

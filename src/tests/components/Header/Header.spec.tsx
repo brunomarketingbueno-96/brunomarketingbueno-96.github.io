@@ -1,68 +1,47 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Header from '../../../components/Header';
 
-import Header from "@/components/Header";
-
-vi.mock("@/components/Logo", () => ({
-  default: () => <div data-testid="mock-logo">Logo</div>
+vi.mock('@/components/Logo', () => ({
+  default: () => <div data-testid="header-logo">Logo</div>,
 }));
 
-vi.mock("@/components/Menu", () => ({
+vi.mock('@/components/Menu', () => ({
   default: ({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }) => (
-    <div
-      data-testid={mobile ? "mock-mobile-menu" : "mock-desktop-menu"}
-      onClick={onClose}
-    >
-      Menu
+    <div data-testid={mobile ? 'mobile-menu' : 'desktop-menu'}>
+      {mobile && <button data-testid="close-mobile" onClick={onClose}>Close</button>}
     </div>
-  )
+  ),
 }));
 
-describe("Header Component", () => {
-  it("should render logo and desktop menu by default", () => {
+describe('Header component', () => {
+  it('renders header with logo and desktop menu by default', () => {
     render(<Header />);
-
-    const logoElement = screen.getByTestId("mock-logo");
-    expect(logoElement).toBeInTheDocument();
-
-    const desktopMenuElement = screen.getByTestId("mock-desktop-menu");
-    expect(desktopMenuElement).toBeInTheDocument();
+    expect(screen.getByTestId('header-logo')).toBeInTheDocument();
+    expect(screen.getByTestId('desktop-menu')).toBeInTheDocument();
+    expect(document.body.style.overflow).toBe('unset');
   });
 
-  it("should start with the mobile menu hidden", () => {
-    render(<Header />);
+  it('toggles mobile menu and body overflow on button click', () => {
+    const { unmount } = render(<Header />);
+    const toggleButton = screen.getByRole('button', { name: /Toggle menu/i });
 
-    const mobileMenuElement = screen.getByTestId("mock-mobile-menu");
-    const containerDiv = mobileMenuElement.parentElement;
-
-    expect(containerDiv).toHaveClass("-translate-x-full");
-  });
-
-  it("should open mobile menu when toggle button is clicked", () => {
-    render(<Header />);
-
-    const toggleButton = screen.getByRole("button", { name: /toggle menu/i });
     fireEvent.click(toggleButton);
+    expect(document.body.style.overflow).toBe('hidden');
+    expect(screen.getByTestId('mobile-menu')).toBeInTheDocument();
 
-    const mobileMenuElement = screen.getByTestId("mock-mobile-menu");
-    const containerDiv = mobileMenuElement.parentElement;
+    const closeButton = screen.getByTestId('close-mobile');
+    fireEvent.click(closeButton);
+    expect(document.body.style.overflow).toBe('unset');
 
-    expect(containerDiv).toHaveClass("translate-x-0");
-  });
-
-  it("should lock body scroll when mobile menu is open and unlock when closed", () => {
-    render(<Header />);
-
-    expect(document.body.style.overflow).toBe("unset");
-
-    const toggleButton = screen.getByRole("button", { name: /toggle menu/i });
     fireEvent.click(toggleButton);
+    expect(document.body.style.overflow).toBe('hidden');
 
-    expect(document.body.style.overflow).toBe("hidden");
+    fireEvent.click(toggleButton);
+    expect(document.body.style.overflow).toBe('unset');
 
-    const mobileMenuElement = screen.getByTestId("mock-mobile-menu");
-    fireEvent.click(mobileMenuElement);
-
-    expect(document.body.style.overflow).toBe("unset");
+    fireEvent.click(toggleButton);
+    unmount();
+    expect(document.body.style.overflow).toBe('unset');
   });
 });

@@ -1,32 +1,26 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
-
-import About from '@/components/About'
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import About from '../../../components/About';
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        'about.title': 'About Me'
-      }
-      return translations[key] || key
-    }
-  })
-}))
+    t: (key: string, options?: { defaultValue?: string }) => options?.defaultValue || key,
+  }),
+}));
 
-vi.mock('@/components/Profile', () => ({
-  default: () => <div data-testid="profile" />
-}))
+describe('About component', () => {
+  it('renders about section with heading, image, and text content', () => {
+    render(<About />);
 
-vi.mock('@/components/Bio', () => ({
-  default: () => <div data-testid="bio" />
-}))
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About Me (Bruno Bueno).');
+    expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Strategy driven by results and purpose.');
 
-describe('About Component', () => {
-  it('should render the section with the correct id', () => {
-    const { container } = render(<About />)
-    const section = container.querySelector('#about')
-    expect(section).toBeInTheDocument()
-  })
+    const image = screen.getByAltText('Bruno Bueno holding an award');
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('src', 'bre.png');
 
-})
+    expect(screen.getByText(/With over 10 years in the market/i)).toBeInTheDocument();
+    expect(screen.getByText(/I was born out of frustration/i)).toBeInTheDocument();
+    expect(screen.getByText(/I was born in Caxias do Sul-RS/i)).toBeInTheDocument();
+  });
+});

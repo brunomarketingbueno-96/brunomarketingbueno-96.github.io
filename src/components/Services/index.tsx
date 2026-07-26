@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-// --- TIPAGENS ---
 type Translation = {
   language: string;
   title: string;
@@ -15,7 +14,6 @@ type Service = {
   translations: Translation[];
 };
 
-// --- COMPONENTE DE CARREGAMENTO (SKELETON) ---
 function SkeletonService() {
   return (
     <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm flex flex-col overflow-hidden animate-pulse">
@@ -32,34 +30,27 @@ function SkeletonService() {
   );
 }
 
-// --- COMPONENTE DO CARD DE SERVIÇO ---
 function ServiceCard({ service }: { service: Service }) {
   const { i18n } = useTranslation();
 
   const currentLang = i18n.language ? i18n.language.substring(0, 2) : "pt";
 
-  // Busca tradução correspondente ou usa o português como fallback
   const content = service.translations.find(tr => tr.language === currentLang)
     || service.translations.find(tr => tr.language === 'pt');
 
   if (!content) return null;
 
-
   return (
     <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group">
-
-      {/* Imagem com proporção 16:9 preservada */}
       <div className="relative w-full pt-[56.25%] bg-zinc-100 overflow-hidden">
         <img
           src={service.imageUrl}
           alt={content.title}
           className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        {/* Overlay sutil em tom de âmbar ao passar o mouse */}
         <div className="absolute inset-0 bg-amber-900/0 group-hover:bg-amber-900/10 transition-colors duration-300 pointer-events-none" />
       </div>
 
-      {/* Conteúdo interno do Card */}
       <div className="p-6 flex flex-col grow">
         <h3 className="text-lg font-bold mb-3 text-zinc-800 leading-snug">
           {content.title}
@@ -70,14 +61,11 @@ function ServiceCard({ service }: { service: Service }) {
             {content.description}
           </p>
         </div>
-
-
       </div>
     </div>
   );
 }
 
-// --- SEÇÃO PRINCIPAL DE SERVIÇOS ---
 export default function ServicesSection() {
   const [services, setServices] = useState<Service[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -91,29 +79,26 @@ export default function ServicesSection() {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error("Erro ao carregar serviços:", err);
+        console.error(err);
         setIsLoading(false);
       });
   }, []);
 
   return (
-    <section id="servicos" className="py-24 px-6 md:px-20 w-full bg-zinc-50 border-t border-zinc-200">
+    <section id="services" className="py-24 px-6 md:px-20 w-full bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto">
-
-        {/* Cabeçalho da Seção */}
         <div className="mb-16 text-center">
           <h2 className="text-amber-600 font-bold tracking-wide uppercase text-sm mb-3">
-            {t("services.subtitle", "O que fazemos")}
+            {t('services.subtitle', { defaultValue: 'What we do' })}
           </h2>
           <h3 className="text-3xl md:text-4xl font-extrabold text-zinc-800 leading-tight mb-4">
-            {t("services.title", "Soluções Estratégicas")}
+            {t('services.title', { defaultValue: 'Strategic Solutions' })}
           </h3>
           <p className="text-zinc-600 max-w-2xl mx-auto text-lg">
-            Da atração à conversão. Serviços integrados para garantir que cada etapa do seu negócio funcione como uma máquina de vendas.
+            {t('services.description', { defaultValue: 'From attraction to conversion. Integrated services to ensure every step of your business works like a sales machine.' })}
           </p>
         </div>
 
-        {/* Grid perfeitamente alinhado com 4 colunas no Desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
             <>
@@ -127,7 +112,6 @@ export default function ServicesSection() {
             ))
           )}
         </div>
-
       </div>
     </section>
   );

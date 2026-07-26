@@ -1,8 +1,8 @@
-
-import Logo from '../Logo'; // Importe o componente Logo que criamos anteriormente
+import { useTranslation } from 'react-i18next';
+import Logo from '@/components/Logo';
 
 export default function Footer() {
-  // Pega o ano atual automaticamente para o copyright não ficar defasado
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -11,31 +11,58 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
-          {/* Coluna 1: Logo e Descrição */}
           <div className="flex flex-col items-center md:items-start">
-            {/* Reutilizando o Logo com a prop isWhite para o fundo escuro */}
             <Logo isWhite />
             <p className="mt-4 text-zinc-400 text-sm text-center md:text-left max-w-xs leading-relaxed">
-              Estratégia, integração e escala para negócios que buscam crescimento previsível através de metodologias validadas.
+              {t('footer.description', { defaultValue: 'Strategy, integration and scaling for businesses seeking predictable growth through validated methodologies.' })}
             </p>
           </div>
 
-          {/* Coluna 2: Navegação Rápida */}
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Navegação</h4>
-            <nav className="flex flex-col space-y-3 text-center md:text-left">
-              <a href="#hero" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">Início</a>
-              <a href="#servicos" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">Serviços</a>
-              <a href="#metodologia" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">A Metodologia</a>
-              <a href="#resultados" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">Resultados</a>
-              <a href="#sobre" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">Sobre mim</a>
-              <a href="#faq" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">Dúvidas (FAQ)</a>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">
+              {t('footer.nav_title', { defaultValue: 'Navigation' })}
+            </h4>
+            <nav className="grid grid-cols-2 gap-x-8 gap-y-3 text-center md:text-left">
+              <a href="#hero" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_home', { defaultValue: 'Home' })}
+              </a>
+              <a href="#introduction" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_introduction', { defaultValue: 'Introduction' })}
+              </a>
+              <a href="#methodology" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_methodology', { defaultValue: 'Methodology' })}
+              </a>
+              <a href="#cases" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_results', { defaultValue: 'Results' })}
+              </a>
+              <a href="#services" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_services', { defaultValue: 'Services' })}
+              </a>
+              <a href="#depoimentos" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_testimonials', { defaultValue: 'Testimonials' })}
+              </a>
+              <a href="#recomendacoes-linkedin" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_reviews', { defaultValue: 'Recommendations' })}
+              </a>
+              <a href="#about" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_about', { defaultValue: 'About me' })}
+              </a>
+              <a href="#educations" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_educations', { defaultValue: 'Educations' })}
+              </a>
+              <a href="#contact" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_contact', { defaultValue: 'Contact' })}
+              </a>
+              <a href="#FAQ" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                {t('footer.nav_faq', { defaultValue: 'FAQ' })}
+              </a>
             </nav>
           </div>
 
-          {/* Coluna 3: Redes e Contato */}
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Conecte-se</h4>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">
+              {t('footer.connect_title', { defaultValue: 'Connect' })}
+            </h4>
 
             <a
               href="https://www.linkedin.com/in/bruno-mendes-bueno-944834217/"
@@ -46,7 +73,7 @@ export default function Footer() {
               <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
-              LinkedIn Profissional
+              {t('footer.linkedin_text', { defaultValue: 'Professional LinkedIn' })}
             </a>
 
             <a
@@ -62,13 +89,12 @@ export default function Footer() {
 
         </div>
 
-        {/* Linha de Copyright */}
         <div className="pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center">
           <p className="text-zinc-500 text-xs text-center md:text-left mb-2 md:mb-0">
-            © {currentYear} Bruno Bueno. Todos os direitos reservados.
+            © {currentYear} {t('footer.rights', { defaultValue: 'Bruno Bueno. All rights reserved.' })}
           </p>
           <p className="text-zinc-600 text-xs text-center md:text-right">
-            Desenvolvido com foco em conversão e performance.
+            {t('footer.developed_by', { defaultValue: 'Developed with a focus on conversion and performance.' })}
           </p>
         </div>
 

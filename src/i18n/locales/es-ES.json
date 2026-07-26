@@ -2,90 +2,171 @@
   "menu": {
     "home": "Inicio",
     "about": "Sobre mí",
-    "projects": "Proyectos",
-    "educations": "Educación",
-    "contact": "Contacto"
+    "methodology": "El Método",
+    "cases": "Casos",
+    "services": "Servicios"
   },
   "hero": {
-    "availability": "Disponible para nuevos proyectos",
-    "description": "Construyendo el futuro de la web con",
-    "descriptionHighlight": "Creatividad, Código y Compromiso.",
-    "subtext": "Desarrollador full-stack apasionado por las interfaces elegantes y el código limpio. Transformando ideas en productos digitales que a las personas les encanta usar.",
-    "cta-button-cv": "Descargar Currículum",
-    "cta-button-projects": "Ver Proyectos"
+    "role": "Gestor de Marketing",
+    "title": "Estrategia, tecnología y rendimiento para escalar su negocio.",
+    "description": "Trabajo con proyectos enfocados en ventas de productos físicos, servicios, infoproductos, cursos y mentorías. Con mi equipo de dirección de arte y tecnología, entregamos soluciones integradas. Los valores varían según cada proyecto. Programamos una reunión para entender su caso y proponer la solución adecuada.",
+    "cta_primary": "Solicitar Diagnóstico Gratuito",
+    "cta_secondary": "Ver portafolio",
+    "image_alt": "Bruno Bueno"
+  },
+  "introduction": {
+    "image_alt": "Bruno Bueno trabajando",
+    "title_start": "Mi mayor diferencial: trabajo por ",
+    "title_highlight": "resultados",
+    "title_end": ", no solo por un contrato.",
+    "paragraph_1": "Solo deberías pagar por lo que trae resultados. Por eso, empiezo con proyectos cortos y contratos cortos. No exijo contratos de 12 meses. Si no genera resultados, eres libre de irte.",
+    "paragraph_3": "Y lo mejor: la gran mayoría de mis proyectos pueden ser atendidos de forma online, donde puedes seguir todo el proceso de construcción.",
+    "feature_1_title": "Más de 10 Años en el Mercado",
+    "feature_1_desc": "Desde pequeñas hasta grandes corporaciones y startups.",
+    "feature_2_title": "Prueba inicial",
+    "feature_2_desc": "Proyectos cortos para validar la estrategia sin largos compromisos.",
+    "feature_3_title": "Sin contrato de permanencia",
+    "feature_3_desc": "Sin contratos largos. Si no genera resultados, cancele libremente.",
+    "feature_4_title": "Retención natural",
+    "feature_4_desc": "Clientes fieles por resultados. Especialista en e-commerce, infoproductos y servicios.",
+    "cta_button_text": "Quiero una asociación enfocada en ganancias",
+    "cta_whatsapp_message": "Hola Bruno, leí un poco de tu historia en el sitio web y me gustaría hablar sobre mi negocio."
+  },
+  "methodology": {
+    "subtitle": "El Método",
+    "title": "Estrategia basada en datos, no en suposiciones.",
+    "description": "Los 4 pilares que guían mi trabajo. Aplicable a cualquier tipo de negocio: físico, digital, servicios, infoproductos, cursos o mentorías.",
+    "pillar_1_title": "1. Diagnóstico y Alineación",
+    "pillar_1_subtitle": "",
+    "pillar_1_content": "Entiendo a fondo su operación, su producto y su público objetivo antes de invertir el primer centavo. Cada centavo suyo es importante, cuido su dinero como si fuera mío.",
+    "pillar_2_title": "2. Infraestructura y Tecnología",
+    "pillar_2_subtitle": "",
+    "pillar_2_content": "Mi equipo de tecnología y yo desarrollamos la base necesaria (IA, sitios web, funcionalidades, landing pages, automatizaciones) para convertir visitantes en clientes.",
+    "pillar_3_title": "3. Anuncios y Posicionamiento",
+    "pillar_3_subtitle": "",
+    "pillar_3_content": "Creamos contenidos estratégicos y estructuramos embudos de ventas que funcionan de manera consistente y personalizada para su negocio.",
+    "pillar_4_title": "4. Análisis y Escala",
+    "pillar_4_subtitle": "",
+    "pillar_4_content": "Mido cada métrica, le explico todo lo que está ocurriendo y optimizamos el negocio para alcanzar o aumentar la escala.",
+    "cta_button_text": "Quiero aplicar este método en mi negocio",
+    "cta_helper_text": "Hable directamente con Bruno por WhatsApp.",
+    "cta_whatsapp_message": "¡Hola Bruno, estaba viendo tu sitio web y me gustaría aplicar tu método de 4 pilares en mi negocio!"
+  },
+  "results": {
+    "subtitle": "Casos de Éxito",
+    "title": "Resultados que hablan más fuerte que las promesas.",
+    "description": "Números reales de quienes viven en el frente de batalla digital, generando ganancias en múltiples nichos y modelos de negocio.",
+    "case_1_niche": "Nicho: Producto Perpetuo",
+    "case_1_title": "Escalado Rápido en Ventas",
+    "case_1_description": "Transformamos un e-book de proveedores de moda en un producto altamente rentable 100% online.",
+    "case_1_prefix": "+R$ ",
+    "case_1_suffix": " mil",
+    "case_1_time": "en solo 3 meses",
+    "case_2_niche": "Nicho: Medicina Integrativa",
+    "case_2_title": "Retorno sobre la Inversión",
+    "case_2_description": "Lanzamiento enfocado en público caliente, generando ingresos brutos de casi R$ 64 mil con alta ganancia.",
+    "case_2_prefix": "ROAS ",
+    "case_2_suffix": "x",
+    "case_2_time": "Retorno por real invertido",
+    "case_3_niche": "Nicho: Tecnología en Salud",
+    "case_3_title": "Premio Internacional",
+    "case_3_description": "Premiado como 4º lugar en Brasil por una multinacional estadounidense, con honores directos en Cancún, México.",
+    "case_3_prefix": "U$ ",
+    "case_3_suffix": " mil",
+    "case_3_time": "en ventas directas",
+    "case_4_niche": "Nicho: Naturopatía",
+    "case_4_title": "Lanzamiento Digital",
+    "case_4_description": "Conversión estratégica con un público objetivo altamente comprometido, generando más de R$ 60 mil en ingresos brutos.",
+    "case_4_prefix": "ROAS ",
+    "case_4_suffix": "x",
+    "case_4_time": "Retorno por real invertido",
+    "cta_button_text": "Quiero este nivel de resultados en mi negocio",
+    "cta_whatsapp_message": "Hola Bruno, vi los resultados de tu portafolio y me gustaría entender cómo aplicar estas estrategias en mi empresa."
+  },
+  "faq": {
+    "subtitle": "Resuelve tus dudas",
+    "title": "Preguntas Frecuentes",
+    "description": "¿Aún tienes dudas si esta es la elección correcta para tu negocio?",
+    "faq_1_question": "¿El servicio de Bruno sirve para empresas físicas o solo digitales?",
+    "faq_1_answer": "Sirve para ambos. La metodología de los 4 pilares ya ha generado resultados en diversos nichos, desde clínicas y tiendas físicas (minoristas/mayoristas) hasta e-commerces, infoproductos y startups. El enfoque del 1º Pilar (Diagnóstico) es justamente adaptar la estrategia a la realidad de su modelo de negocio.",
+    "faq_2_question": "¿Funcionas como una agencia de marketing tradicional?",
+    "faq_2_answer": "No. En la agencia tradicional el enfoque suele ser solo entregar 'posts y likes'. Yo actúo como estratega digital enfocado en procesos, ventas y conversión. Trabajo la integración del marketing con tu área comercial (Inbound, Outbound, CRM y Automatizaciones) para asegurar escalabilidad y ganancias reales.",
+    "faq_3_question": "Mi equipo comercial tiene dificultades. ¿Ayudas en esta etapa?",
+    "faq_3_answer": "¡Por supuesto! Ese es mi 2º Pilar (Integración de Áreas). De nada sirve que el marketing genere cientos de contactos si el equipo de ventas no logra cerrar. Ayudo a optimizar herramientas de CRM, embudos de ventas, automatizaciones de WhatsApp e incluso en la capacitación de guiones para tu equipo.",
+    "faq_4_question": "¿En cuánto tiempo empezaré a ver resultados?",
+    "faq_4_answer": "Utilizo el Principio de Pareto (enfocarse en el 20% de las acciones que generan el 80% de los resultados) y el modelo MVP para validar estrategias rápidamente. Aunque el marketing requiere una construcción sólida, mi objetivo es encontrar las 'fugas de dinero' y aplicar victorias rápidas desde las primeras semanas de ejecución.",
+    "faq_5_question": "¿Cómo sabré qué se está haciendo en el proyecto?",
+    "faq_5_answer": "Transparencia total. Aplico metodologías ágiles (3º Pilar) usando herramientas como Trello y Notion. Tendrás acceso a los cronogramas, métricas y sabrás exactamente qué tarea se está ejecutando y cuándo será entregada.",
+    "whatsapp_message": "Hola Bruno, leí las preguntas frecuentes en el sitio web y todavía tengo algunas dudas. ¿Podemos hablar?",
+    "button_text": "Todavía tengo dudas"
+  },
+  "testimonials": {
+    "subtitle": "Testimonios",
+    "title": "Historias de clientes que hablan más fuerte que las promesas.",
+    "description": "Resultados reales de quienes viven en el frente de batalla digital.",
+    "video_title_prefix": "Testimonio - ",
+    "name_1": "Victor y Raquel",
+    "name_2": "Sarah",
+    "name_3": "Samia",
+    "name_4": "Manoela"
+  },
+  "linkedin_reviews": {
+    "subtitle": "Recomendaciones en LinkedIn",
+    "title": "Reconocimiento profesional",
+    "description": "Reseñas escritas por colegas, socios y clientes que siguieron de cerca el impacto de mi trabajo.",
+    "alt_prefix": "Recomendación de ",
+    "footer_text_1": "Todas las recomendaciones anteriores son relatos de clientes y socios reales. Puedes consultar estas y otras reseñas ",
+    "footer_link_text": "directamente en mi perfil de LinkedIn",
+    "footer_text_2": "."
   },
   "about": {
-    "title": "Sobre mí",
-    "nacionality": "Brasileño",
-    "age": "{{year}} Años",
-    "location": "Cachoeirinha - RS, Brasil",
-    "university": "Análisis y Desarrollo de Sistemas",
-    "bio": {
-      "title": "Desarrollador Web Full-Stack",
-      "paragraph1": "¡Hola! Soy un **desarrollador Full Stack** con enfoque en Front-end. Uniendo mi visión estratégica de **redes sociales** con la tecnología, he construido una base práctica sólida: 2 años de experiencia como freelance y 1 año en el mercado de e-commerce. Actualmente, estoy finalizando mi carrera de **Análisis y Desarrollo de Sistemas**.",
-      "paragraph2": "Tengo un fuerte dominio de **React** y **Node.js**, com experiencia práctica en la implementación de interfaces fieles al diseño (**UX/UI**) y creación de funciones de **CRO** para potenciar conversiones. Ya sea creando APIs en el backend o front-ends dinámicos, mi enfoque es entregar código limpio, alto rendimiento y experiencias de usuario excepcionales."
-    },
-    "labels": {
-      "nacionality": "Nacionalidad",
-      "age": "Edad",
-      "location": "Ubicación",
-      "cursing": "Cursando"
-    }
-  },
-  "projects": {
-    "readMore": "Seguir leyendo",
-    "showLess": "Mostrar menos",
-    "viewProject": "Ver Proyecto",
-    "code": "Código"
-  },
-  "educations": {
-    "title": "Educación",
-    "viewCertificate": "Ver Certificado",
-    "Educations": {
-      "types": {
-        "college": "Facultad",
-        "course": "Curso",
-        "certification": "Certificación",
-        "bootcamp": "Bootcamp"
-      }
-    },
-    "date": {
-      "present": "Presente"
-    },
-    "readMore": "Seguir leyendo"
+    "title": "Sobre Mí (Bruno Bueno).",
+    "subtitle": "Estrategia guiada por resultados y propósito.",
+    "paragraph_1": "Con más de 10 años en el mercado, trabajo integrando estrategia, operación y gestión. Yo, junto con un equipo especializado en dirección de arte y tecnología, entrego proyectos de calidad.",
+    "paragraph_2": "Nací de la frustración con el modelo tradicional: agencias que prometen mucho, entregan poco y atrapan a los clientes en contratos abusivos. Para mí, la única lealtad que importa es hacia tus resultados.",
+    "paragraph_3": "Nací en Caxias do Sul-RS, y actualmente vivo en SC, pero atendemos en todo Brasil y en el extranjero. La credibilidad es mi activo más valioso.",
+    "image_alt": "Bruno Bueno sosteniendo un premio"
   },
   "contact": {
-    "title": "Contacto",
-    "form": {
-      "name": {
-        "label": "Nombre",
-        "placeholder": "Tu nombre"
-      },
-      "company": {
-        "label": "Empresa",
-        "placeholder": "Tu empresa"
-      },
-      "email": {
-        "label": "E-mail",
-        "placeholder": " Tu e-mail"
-      },
-      "whatsapp": {
-        "label": "WhatsApp",
-        "placeholder": "Tu número de WhatsApp"
-      },
-      "message": {
-        "label": "Mensaje",
-        "placeholder": "Escribe tu mensaje aquí..."
-      },
-      "submit": "Enviar Mensaje",
-      "messages": {
-        "success": "¡Mensaje enviado con éxito!",
-        "validationError": "Por favor, completa un correo electrónico o número de WhatsApp.",
-        "genericError": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
-      }
-    }
+    "whatsapp_message": "Hola Bruno, estoy listo para dejar de perder ventas. Me gustaría programar un diagnóstico estratégico para mi empresa.",
+    "subtitle": "El siguiente paso",
+    "title_start": "¿Listo para dejar de perder ventas y ",
+    "title_highlight": "empezar a escalar?",
+    "description": "Como trabajo a profundidad en proyectos enfocados en resultados reales, mi disponibilidad de agenda es restringida. Programemos un diagnóstico estratégico para su empresa. Haga clic abajo y contácteme por WhatsApp.",
+    "button_text": "Programar Diagnóstico Estratégico",
+    "security_info": "Su información está segura. El contacto es directamente conmigo."
   },
   "footer": {
-    "rights": "Todos los derechos reservados © {{year}} | Desarrollado con ❤️ por Willian D. Daniel"
+    "description": "Estrategia, integración y escala para negocios que buscan crecimiento predecible a través de metodologías validadas.",
+    "nav_title": "Navegación",
+    "nav_home": "Inicio",
+    "nav_introduction": "Introducción",
+    "nav_methodology": "La Metodología",
+    "nav_results": "Resultados",
+    "nav_services": "Servicios",
+    "nav_testimonials": "Testimonios",
+    "nav_reviews": "Recomendaciones",
+    "nav_about": "Sobre mí",
+    "nav_educations": "Títulos",
+    "nav_contact": "Contacto",
+    "nav_faq": "Dudas (FAQ)",
+    "connect_title": "Conéctate",
+    "linkedin_text": "LinkedIn Profesional",
+    "rights": "Bruno Bueno. Todos los derechos reservados.",
+    "developed_by": "Desarrollado con enfoque en conversión y rendimiento."
+  },
+  "services": {
+    "subtitle": "Qué hacemos",
+    "title": "Soluciones Estratégicas",
+    "description": "De la atracción a la conversión. Servicios integrados para garantizar que cada etapa de tu negocio funcione como una máquina de ventas."
+  },
+  "educations": {
+    "subtitle": "Evolución constante y aprendizaje continuo",
+    "title": "Títulos y Especializaciones",
+    "type_college": "Universidad",
+    "type_course": "Curso/Especialización",
+    "view_certificate": "Ver Certificado",
+    "cta_button_text": "Hablar sobre mi proyecto",
+    "cta_whatsapp_message": "Hola Bruno, vi tus calificaciones en el sitio web y me gustaría hablar sobre mi negocio."
   }
 }
